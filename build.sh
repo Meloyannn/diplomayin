@@ -6,4 +6,5 @@ install_dep (){
 }
 
 install_dep api
+install_dep web
 docker-compose build

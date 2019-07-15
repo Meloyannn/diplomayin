@@ -8,3 +8,10 @@ services:
     volumes:
      - './api/files:/app'
     entrypoint: ["nodemon", "server.js"]
+  web:
+    build: ./web
+    ports:
+      - 8080:3000
+    volumes:
+     - './web/files:/web'
+    entrypoint: ["npm", "start"]

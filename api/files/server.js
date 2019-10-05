@@ -1,6 +1,6 @@
-var express = require('express');
-var api = express();
+const express = require('express');
+const api = express();
 
-api.listen(80, function () {
+api.listen(80, () => {
   console.log('Example app listening on port 80!');
 });

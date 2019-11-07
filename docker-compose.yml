@@ -5,13 +5,27 @@ services:
     build: ./api
     ports:
       - 8000:80
+    networks:
+     - freelace-nw
     volumes:
      - './api/files:/app'
-    entrypoint: ["nodemon", "server.js"]
+    entrypoint: ["nodemon", "app.js"]
   web:
     build: ./web
     ports:
       - 8080:3000
+    networks:
+     - freelace-nw
     volumes:
      - './web/files:/web'
     entrypoint: ["npm", "start"]
+  mongo:
+    image: mongo
+    volumes:
+     - "/freelance/data/db:/data/db"
+    networks:
+     - yolgwoss-nw
+    restart: always
+
+networks:
+  freelace-nw:

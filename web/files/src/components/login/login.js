@@ -14,13 +14,17 @@ class Login extends React.Component {
     }
   }
   _handleSubmit = () => {
-    this.setState({ submitted: true })
-}
- _handleChange = (event) => {
-  const { formData } = this.state;
-  formData[event.target.name] = event.target.value;
-  this.setState({ formData });
-}
+    this.setState({ submitted: true }) 
+    alert("send")
+  }
+
+  _handleChange = (event) => {
+    console.log("event taregret",event.target);
+    
+    const { formData } = this.state;
+    formData[event.target.name] = event.target.value;
+    this.setState({ formData });
+  }
   render() {
     return (
       <Container maxWidth="xs">
@@ -63,10 +67,6 @@ class Login extends React.Component {
           >
             Sign In
           </Button>
-          {
-            this.state.submitted && alert("send")
-           
-          }
         </ValidatorForm>
       </Container>
     );

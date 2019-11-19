@@ -19,9 +19,7 @@ class Registration extends React.Component {
     this.setState({ submitted: true })
     alert("registration")
 }
-_handleChange = (event) => {
-    console.log("datark",event.target);
-    
+_handleChange = (event) => {   
     const { formData } = this.state;
     formData[event.target.name] = event.target.value;
     this.setState({ formData });
@@ -35,7 +33,6 @@ _handleChange = (event) => {
         return true;
     });
 }
-
   render() {
     return (
       <Container maxWidth="xs" >

@@ -1,7 +1,9 @@
 import React from 'react';
 import { Container, Button } from '@material-ui/core';
 import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator'
-
+import {
+  Link
+} from "react-router-dom";
 class Login extends React.Component {
   constructor(props) {
     super(props)
@@ -14,8 +16,10 @@ class Login extends React.Component {
     }
   }
   _handleSubmit = () => {
+    console.log("kmtni handleSubmiteddddddddd");
+    
     this.setState({ submitted: true }) 
-    alert("send")
+    
   }
 
   _handleChange = (event) => {
@@ -26,9 +30,11 @@ class Login extends React.Component {
     this.setState({ formData });
   }
   render() {
+    console.log("login",this.props);
+    
     return (
       <Container maxWidth="xs">
-        <h1 >Login</h1>
+     <h1 >Login</h1>
         <ValidatorForm
           ref="form"
           onSubmit={this._handleSubmit}
@@ -59,14 +65,16 @@ class Login extends React.Component {
             onChange={this._handleChange}
             autoComplete="current-password"
           />
+         
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
           >
-            Sign In
+      Sign In
           </Button>
+          
         </ValidatorForm>
       </Container>
     );
